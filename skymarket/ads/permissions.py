@@ -8,7 +8,7 @@ class UserPermissions(permissions.BasePermission):
         if view.action == 'create':
             return request.user.is_authenticated
         else:
-            return False
+            return True
 
     def has_object_permission(self, request, view, obj):
         if not request.user.is_authenticated:
